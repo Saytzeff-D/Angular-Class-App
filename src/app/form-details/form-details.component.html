@@ -1,0 +1,30 @@
+<div class="bg-light shadow">
+    <!-- <i class="fa fa-user fa-lg text-center" style="font-size: 50px; align-content: center;"></i> -->
+    <div class="text-cente p-2">
+       <h3> Name: <em>{{firstname}} {{lastname}}</em></h3><br>
+        <h3>Phone Number: <em>{{phone}}</em></h3><br>
+        <h3>Email Address: <em>{{address}}</em></h3>
+        <button class="btn btn-danger" data-toggle="modal" data-target="#myModal">Edit</button>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-dialog-centered">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h3 class="modal-title">Modal Header</h3>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>

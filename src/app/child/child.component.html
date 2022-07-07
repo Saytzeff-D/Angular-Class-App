@@ -1,0 +1,14 @@
+<div class="row">
+    THIS IS THE CHILD COMPONENT: {{schoolName}}
+    <input type="text" [(ngModel)]="item" name="item" class="form-control" (keyup)="emitItem()">
+    <!-- <button class="btn btn-danger" (click)="emitItem()">Emit Item</button> -->
+</div>
+<div class="row mt-2">
+    <div class="col-5">
+        <input type="text" placeholder="Goods" [(ngModel)]="goods" name="goods" class="form-control">
+    </div>
+    <div class="col-5">
+        <input type="text" placeholder="Price" name="price" [(ngModel)]="price" class="form-control">
+    </div>
+    <button class="btn btn-danger" (click)="saveThem()">Save</button>
+</div>

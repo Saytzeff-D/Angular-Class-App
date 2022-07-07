@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="input-group m-3 col-6">
+            <input type="text" placeholder="Enter your Email Address" name="address" class="form-control" [(ngModel)]="todo">
+        <div class="input-group-append">
+            <button class="btn btn-danger" (click)="logIn()">Log In</button>
+        </div>
+    </div>
+    <h5 class="text-warning font-weight-bold">{{reply}}</h5>
+    <div class="row bg-warning shadow-lg">
+        <div class="col-12 p-1" *ngFor="let i =index; let todo of todoList">
+            <div (click)="viewTodo(i)">
+                {{i + 1}}. {{todo.item}} <button (click)="delMe(i)" class="btn btn-danger ml-4">Del</button>
+            </div>
+        </div>
+    </div>
+       
+</div>
+<div class="text-white w-100 ml-5">
+    <form action="">
+        <fieldset class="col-6">
+            <legend>Student List</legend>
+            <div class="form-group">
+                <input type="text" placeholder="Name"  name="studName" [(ngModel)]="name" class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Phone"  name="phoneNum" [(ngModel)]="phone" class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Email"  name="email" [(ngModel)]="email" class="form-control">
+            </div>
+        </fieldset>
+        <button class="btn btn-info mb-2" (click)="addStud()">Sign In</button>
+    </form>
+    <!-- <div *ngFor="let i = index; let data of studArr">
+            {{data.id}}. {{data.title}} <button (click)="viewTodo(data.id)" class="btn btn-info">View</button>
+    </div> -->
+
+    <mat-tab-group class="text-danger">
+        <mat-tab label="First">
+            Content 1
+        </mat-tab>
+        <mat-tab label="Second">
+            Content 2
+        </mat-tab>
+        <mat-tab label="Third">
+            Content 3
+        </mat-tab>
+    </mat-tab-group>
+</div>

@@ -1,0 +1,8 @@
+<div class="text-white ml-5">
+    <h2>Info</h2>
+    <div [class.completed]="todo.completed">
+    <h6>Title: {{todo.title}}</h6>
+    <h6>Completed: {{todo.completed}}</h6>
+    <a routerLink="/home" (click)="logOut()" class="text-white">Log Out</a>
+</div>
+</div>

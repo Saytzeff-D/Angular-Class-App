@@ -1,0 +1,70 @@
+<div class="row">
+    <!-- <form class="ml-5">
+        <input type="text" [(ngModel)]="firstName" minlength="5" #fname="ngModel" placeholder="First Name" name="firstName" class="form-control mt-3">
+         <div *ngIf="fname.invalid" class="text-light font-weight-bold">
+             <span *ngIf="fname.errors.minlength">
+                 Name beyond the minimum length specified
+             </span>
+         </div>
+        <br>
+        <input type="text" [(ngModel)]="lastName" placeholder="Last Name" name="lastName" class="form-control"><br>
+        <input type="text" [(ngModel)]="middleName" placeholder="MiddleName" name="middleName" class="form-control"><br>
+        <input type="text" [(ngModel)]="email" name="email" placeholder="Email Address" class="form-control"><br>
+        <input type="text" [(ngModel)]="phone" #phoneModel="ngModel" name="phone" placeholder="Phone" class="form-control">
+        <div *ngIf="phoneModel.invalid && phoneModel.touched" class="text-light font-weight-bold">
+            <span *ngIf="phoneModel.errors.lengthError">
+                Not Allowed
+            </span>
+            <span *ngIf="phoneModel.errors.inv">
+                Enter Country Code
+            </span>
+        </div>
+        <button class="btn btn-warning mt-2 mb-2 btn-block" (click)="submitForm()">Submit</button>
+    </form> -->
+
+    <form class="ml-5 mt-3" (ngSubmit)="submitUs()">
+        <input type="text" placeholder="Full Name" [(ngModel)]="firstName" name="firstnam" class="form-control"><br>
+        <input type="text" name="lastnam" placeholder="Last Name" [(ngModel)]="lastName" class="form-control"><br>
+        <input type="text" [(ngModel)]="phoneNum" #phoneNumModel="ngModel" name="phoneNu" placeholder="Phone" class="form-control" appPhoneValidator>
+        <div *ngIf="phoneNumModel.invalid && phoneNumModel.touched" class="text-danger font-weight-bold">
+            <span *ngIf="phoneNumModel.errors.lengthError">
+                Not Allowed
+            </span>
+            <span *ngIf="phoneNumModel.errors.inv">
+                Enter Country Code
+            </span>
+        </div><br>
+        <input type="text" [(ngModel)]="emailAddress" name="emailAd" placeholder="Email Address" class="form-control"><br>
+        <!-- <input type="password" [(ngModel)]="newPassword" placeholder="New Password" name="newPass" class="form-control"><br>
+        <input type="password" [(ngModel)]="confirmPassword" placeholder="Confirm Password" name="confirmPass" class="form-control"> -->
+        <button type="" class="btn btn-success mt-2 mb-2 btn-block">Submit</button>
+    </form>
+
+    <!-- reactiveformmodule -->
+
+    <!-- <form class="ml-5" [formGroup]="userForm">
+        <input type="text" formControlName="firstName" placeholder="First Name" name="firstName" class="form-control mt-3"><br>
+        <input type="text" formControlName="lastName" placeholder="Last Name" name="lastName" class="form-control"><br>
+        <input type="text" formControlName="middleName" placeholder="MiddleName" name="middleName" class="form-control"><br>
+        <input type="text" formControlName="email" name="email" placeholder="Email Address" class="form-control"><br>
+        <input type="text" formControlName="phone" name="phone" placeholder="Phone" class="form-control">
+        <button class="btn btn-warning mt-2 mb-2 btn-block" (click)="submitReactiveForm()">Submit</button>
+    </form> -->
+</div>
+
+<div class="row">
+    <div class="col-3 border-right">
+        <mat-card *ngFor="let i = index; let everything of anything" class="text-danger m-2">
+            <table>
+                <tr>
+                    <td class="pr-3"><h2>{{i + 1}}. {{everything.Firstname}}</h2></td>
+                    <td><button class="btn btn-info" (click)="myDetails(i)">Details</button></td>
+                </tr>
+            </table> 
+        </mat-card>
+    </div>
+    <div class="col-9">
+        <app-form-details [myObj]="objToChild"></app-form-details>
+    </div>
+</div>
+

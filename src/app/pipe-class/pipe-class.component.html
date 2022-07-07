@@ -1,0 +1,40 @@
+<div class="text-white">
+    <p>pipe-class works!</p>
+    {{money | currency:'NGN':'symbol-narrow'}}<br>
+    {{name}}<br>
+    {{dob | date: 'd-M-y'}}
+
+    <input type="text" class="form-control col-6 w-25 mt-2 ml-5 mr-5 mb-2" placeholder="Search" [(ngModel)]="filterText">
+    <button mat-button>Put</button>
+    <table class="table table-success w-75 container">
+        <tr>
+            <th>S/N</th>
+            <th>First Name</th>
+            <th>Middle Name</th>
+            <th>Last Name</th>
+            <th>Initial</th>
+            <th>Level</th>
+            <th>Email Address</th>
+            <th>Action</th>
+        </tr>
+        <tr *ngFor="let i = index; let item of arr | itemFilter:filterText">
+            <td>{{i + 1}}</td>
+            <td>{{item.firstname}}</td>
+            <td>{{item.middlename}}</td>
+            <td>{{item.lastname}}</td>
+            <td>{{item.initial}}</td>
+            <td>{{item.level | multiply:'1' | math}}</td>
+            <td>{{item.email}}</td>
+            <td><button class="btn btn-danger" (click)="delItem(i)"><i class="fa fa-trash fa-lg"></i></button></td>
+        </tr>
+    </table>
+
+    <div class="form-inline mb-2">
+        <input type="text" [(ngModel)]="myname" name="first_name" placeholder="First Name" class="m-2 form-control col-2">
+        <input type="text" [(ngModel)]="middlename" name="middlename" placeholder="Middle Name" class="m-2 form-control col-2">
+        <input type="text" [(ngModel)]="lastname" name="last_name" placeholder="Last Name" class="m-2 form-control col-2">
+        <input type="text" [(ngModel)]="level" placeholder="Level" name="level" class="m-2 form-control col-2">
+        <input type="text" [(ngModel)]="Email" name="Email" placeholder="Email" class="m-2 form-control col-2">
+    </div>
+    <button class="btn btn-danger" (click)="saveItem()">Save</button>
+</div>

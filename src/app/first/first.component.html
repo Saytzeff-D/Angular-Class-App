@@ -1,0 +1,12 @@
+<div class="container">    
+        <mat-card color="primary" *ngFor="let i =index; let list of studentList" class="m-2">
+            <mat-card-content>
+                <p>{{i + 1}}. {{list.first_name}}</p>
+            </mat-card-content>                
+            <mat-card-actions>
+                <button mat-raised-button color="primary" (click)="details(i)" class="btn btn-info">Details</button>
+                <button mat-raised-button color="primary" (click)="delStud(i)" class="btn btn-danger">Del</button>
+            </mat-card-actions>                
+            </mat-card>
+</div>
+  
